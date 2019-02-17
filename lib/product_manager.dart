@@ -4,10 +4,13 @@ import './products.dart';
 class ProductManager extends StatefulWidget {
   final String startingProduct;
 
-  ProductManager(this.startingProduct);
+  ProductManager(this.startingProduct) {
+    print('[ProductManager widget] Constructor');
+  }
 
   @override
   State<StatefulWidget> createState() {
+    print('[ProductManager widget] createState()');
     return _ProductManagerState();
   }
 }
@@ -21,12 +24,21 @@ class _ProductManagerState extends State<ProductManager> {
   // string is passed into ProductManager() in the main.dart
   @override
   void initState() {
+    print('[ProductManager State] initState()');
     super.initState();
     _products.add(widget.startingProduct);
   }
 
+  // good for updating state when theres external data changing
+  @override
+  void didUpdateWidget(ProductManager oldWidget) {
+    print('[ProductManager State] didUpdateWidget()');
+    super.didUpdateWidget(oldWidget);
+  }
+
   @override
   Widget build(BuildContext context) {
+    print('[ProductManager State] build()');
     return Column(
       children: [
         Container(
