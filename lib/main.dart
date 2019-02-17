@@ -10,14 +10,31 @@ class MyApp extends StatelessWidget {
   Widget build(context) {
     return MaterialApp(
       home: Scaffold(
-        appBar:AppBar( //Top nav bar
-          title: Text('EasyList'),
-        ), 
-        body: Card(child: Column(children: <Widget>[
-          Image.asset('assets/food.jpg'),
-          Text('Food Paradisee')
-        ],)),
-      ),
+          //Top nav bar
+          appBar: AppBar(
+            title: Text('EasyList'),
+          ),
+          // shows in column format
+          body: Column(
+            // an array of cards
+            children: [
+              Container(
+                margin: EdgeInsets.all(10.0),
+                child: RaisedButton(
+                      onPressed: () {},
+                      child: Text('Add Product'),
+                    ),
+              ),
+              Card(
+                child: Column(
+                  children: <Widget>[
+                    Image.asset('assets/food.jpg'),
+                    Text('Food Paradisee')
+                  ],
+                ),
+              ),
+            ],
+          )),
     );
   }
 }
