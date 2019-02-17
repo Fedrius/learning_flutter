@@ -46,21 +46,7 @@ class _MyAppState extends State<MyApp> {
                   child: Text('Add Product'),
                 ),
               ),
-              Column(
-                children: _products
-                    // using the product array, map func iterates and makes a card for each on and 'to list' lists it out.
-                    .map(
-                      (element) => Card(
-                            child: Column(
-                              children: <Widget>[
-                                Image.asset('assets/food.jpg'),
-                                Text(element)
-                              ],
-                            ),
-                          ),
-                    )
-                    .toList(),
-              )
+
             ],
           )),
     );
