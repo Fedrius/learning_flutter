@@ -16,6 +16,10 @@ class MyApp extends StatefulWidget {
 // underscore should for classes that are only in the same file
 // This state class belongs to the MyApp stateful widget
 class _MyAppState extends State<MyApp> {
+  // an array of strings called products
+  // use underscore naming convention for var if used in same class
+  List<String> _products = ['Food Testfeertt','wadawdar'];
+
   @override // overriding the build method. easier to read for others
   Widget build(context) {
     return MaterialApp(
@@ -26,7 +30,7 @@ class _MyAppState extends State<MyApp> {
           ),
           // shows in column format
           body: Column(
-            // an array of btn and cards
+            // an array of 1 btn and cards
             children: [
               Container(
                 margin: EdgeInsets.all(10.0),
@@ -35,14 +39,22 @@ class _MyAppState extends State<MyApp> {
                   child: Text('Add Product'),
                 ),
               ),
-              Card(
-                child: Column(
-                  children: <Widget>[
-                    Image.asset('assets/food.jpg'),
-                    Text('Food Paradise')
-                  ],
-                ),
-              ),
+
+              Column(
+                children: _products
+                  // using the product array, map func iterates and makes a card for each on and 'to list' lists it out.
+                    .map(
+                      (element) => Card(
+                            child: Column(
+                              children: <Widget>[
+                                Image.asset('assets/food.jpg'),
+                                Text(element)
+                              ],
+                            ),
+                          ),
+                    )
+                    .toList(),
+              )
             ],
           )),
     );
