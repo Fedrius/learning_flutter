@@ -18,7 +18,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   // an array of strings called products
   // use underscore naming convention for var if used in same class
-  List<String> _products = ['Food Testfeertt','wadawdar'];
+  List<String> _products = ['Food Testfeertt'];
 
   @override // overriding the build method. easier to read for others
   Widget build(context) {
@@ -35,14 +35,20 @@ class _MyAppState extends State<MyApp> {
               Container(
                 margin: EdgeInsets.all(10.0),
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // have to update the state for the app to recognize variable changes
+                    setState(() {
+                      _products.add('Advanced food tester');
+                      // console log
+                      print(_products);
+                    });
+                  },
                   child: Text('Add Product'),
                 ),
               ),
-
               Column(
                 children: _products
-                  // using the product array, map func iterates and makes a card for each on and 'to list' lists it out.
+                    // using the product array, map func iterates and makes a card for each on and 'to list' lists it out.
                     .map(
                       (element) => Card(
                             child: Column(
