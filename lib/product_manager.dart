@@ -44,6 +44,8 @@ class _ProductManagerState extends State<ProductManager> {
         Container(
           margin: EdgeInsets.all(10.0),
           child: RaisedButton(
+            // using the primary color of the theme in main.dart
+            color: Theme.of(context).primaryColor,
             onPressed: () {
               // have to update the state for the app to recognize variable changes
               setState(() {
