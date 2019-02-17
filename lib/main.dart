@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import './product_manager.dart';
 
 // Every component is a widget in flutter!
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           title: Text('EasyList'),
         ),
         // shows in column format
-        body: ProductManager('foooood tester'),
+        body: ProductManager(startingProduct: 'foooood tester'),
       ),
     );
   }
