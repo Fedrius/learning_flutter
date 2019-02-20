@@ -66,8 +66,9 @@ class _ProductManagerState extends State<ProductManager> {
           child: ProductControl(_addProduct),
         ),
         // Calling the Product class and passing in the _products array
-        // Creates the column of cards
-        Products(_products)
+        // Creates the listview of cards
+        // Listview needed to be wrapped by container, or 'expanded (infinite scroll)'
+        Expanded(child: Products(_products))
       ],
     );
   }
