@@ -13,7 +13,7 @@ class Products extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print('[Products widget] build()');
-    return Column(
+    return ListView(
       children: products
           // using the product array, map func iterates and makes a card for each on and 'to list' lists it out.
           .map(
